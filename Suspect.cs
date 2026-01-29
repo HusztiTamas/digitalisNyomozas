@@ -8,16 +8,16 @@ namespace digitalisNyomozas
 {
 	internal class Suspect
 	{
-		private string vallomasSzovege;
-		private DateTime vallomasdatuma;
+		private int gyanusitottsagiSzint;
+		private string status;
 
-		public Suspect(string vallomasSzovege, DateTime vallomasdatuma)
+		public Suspect(int gyanusitottsagiSzint, string status)
 		{
-			this.vallomasSzovege = vallomasSzovege;
-			this.vallomasdatuma = vallomasdatuma;
+			this.gyanusitottsagiSzint = gyanusitottsagiSzint;
+			this.status = status;
 		}
 
-		public string VallomasSzovege { get => vallomasSzovege; set => vallomasSzovege = value; }
-		public DateTime Vallomasdatuma { get => vallomasdatuma; set => vallomasdatuma = value; }
+		public int GyanusitottsagiSzint { get => gyanusitottsagiSzint; set => gyanusitottsagiSzint = value; }
+		public string Status { get => status; set => status = value; }
 	}
 }

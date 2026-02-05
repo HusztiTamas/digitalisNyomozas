@@ -21,6 +21,27 @@ namespace digitalisNyomozas
 						int ertek = valasz;
 						if (ertek < 55 & ertek > 48)
 						{
+							switch (ertek)
+							{
+								case 49:
+									Console.WriteLine("Új ügy felvétele");
+									break;
+								case 50:
+									Console.WriteLine("Személy hozzáadása ügyhöz");
+									break;
+								case 51:
+									Console.WriteLine("Bizonyíték rögzítése");
+									break;
+								case 52:
+									Console.WriteLine("Ügy állapotának módosítása");
+									break;
+								case 53:
+									Console.WriteLine("Idővonal esemény hozzáadása");
+									break;
+								case 54:
+									Console.WriteLine("Gyanúsított értékelése bizonyítékok alapján");
+									break;
+							}
 							test = false;
 						}
 						else
@@ -36,6 +57,8 @@ namespace digitalisNyomozas
 					}
 				}
 			}
+			User u1 = new User("Lajos", "UDLGO732", "Gépész");
+			Console.WriteLine(u1);
 		}
 	}
 }

@@ -7,60 +7,51 @@ namespace digitalisNyomozas
 	{
 		static void Main(string[] args)
 		{
-			char valasz;
+			string valasz;
 			bool test = true;
 			Console.WriteLine("Üdvözlöm a rendszerben.");
 			Console.WriteLine("-----------------------");
 			Console.WriteLine("Válasszon az alábbi lehetőségekből(sorszám)");
-			Console.WriteLine("1. Ügyek kezelése\n2. Személyek kezelése\n3. Bizonyíték kezlése\n4. Idővonal megtekintése\n5. Elemzés / döntések\n6. Kilépés");
-			User u1 = new User("Lajos", "UDLGO732", "Gépész");
+			List<User> felhasznalok = new List<User>();
+			User u1 = new User("nev", "azonosito", "szerepkor");
 			do
 			{
 				{
-					valasz = char.Parse(Console.ReadLine());
-					if (char.IsNumber(valasz))
+					Console.WriteLine("1. Ügyek kezelése\n2. Személyek kezelése\n3. Bizonyíték kezlése\n4. Idővonal megtekintése\n5. Elemzés / döntések\n6. Kilépés");
+					valasz = Console.ReadLine();
+					switch (valasz)
 					{
-						int ertek = valasz;
-						if (ertek < 55 & ertek > 48)
-						{
-							switch (ertek)
+						case "1":
+							Console.WriteLine();
+							break;
+						case "2":
+							User uj = User.Ujugyfel();
+							felhasznalok.Add(uj);
+							foreach (var item in felhasznalok)
 							{
-								case 49:
-									Console.WriteLine();
-									break;
-								case 50:
-									u1.Ujugyfel();
-
-									break;
-								case 51:
-									Console.WriteLine();
-									break;
-								case 52:
-									Console.WriteLine();
-									break;
-								case 53:
-									Console.WriteLine();
-									break;
-								case 54:
-									Console.WriteLine();
-									test = false;
-									break;
+								Console.WriteLine(item);
 							}
-						}
-						else
-						{
-							Console.WriteLine("Helyes értéket adj meg!");
-						}
-					}
-					else
-					{
-						Console.WriteLine("Ne betűt adj meg!");
+							break;
+						case "3":
+							Console.WriteLine();
+							break;
+						case "4":
+							Console.WriteLine();
+							break;
+						case "5":
+							Console.WriteLine();
+							break;
+						case "6":
+							Console.WriteLine();
+							test = false;
+							break;
+						default:
+							Console.WriteLine("Nincs ilyen menüpont");
+							break;
 					}
 				}
 			}
 			while (test);
-			
-			Console.WriteLine(u1);
 		}
 	}
 }

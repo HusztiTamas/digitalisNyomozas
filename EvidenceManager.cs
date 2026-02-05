@@ -8,6 +8,6 @@ namespace digitalisNyomozas
 {
 	internal class EvidenceManager
 	{
-
+		
 	}
 }

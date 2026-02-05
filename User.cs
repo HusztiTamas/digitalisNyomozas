@@ -23,7 +23,7 @@ namespace digitalisNyomozas
 		public string Azonosito { get => azonosito; set => azonosito = value; }
 		public string Szerepkor { get => szerepkor; set => szerepkor = value; }
 
-		public void Ujugyfel()
+		public static User Ujugyfel()
 		{
 			Console.WriteLine("Új ügyfél felvétele");
 			Console.WriteLine("Add meg a nevet:");
@@ -32,13 +32,12 @@ namespace digitalisNyomozas
 			string azonosito = Console.ReadLine();
 			Console.WriteLine("Add meg a szerepkörét:");
 			string szerepkor = Console.ReadLine();
-			User u1 = new User(nev, azonosito, szerepkor);
-			Console.WriteLine(u1);
+			return new User(nev,azonosito,szerepkor);
 		}
 
 		public override string ToString()
 		{
-			return $"Felhasználó neve: {this.nev} Azonosító: {this.azonosito} Szerepköre:	{this.szerepkor}";
+			return $"Felhasználó neve: {this.nev} Azonosító: {this.azonosito} Szerepköre: {this.szerepkor}";
 		}
 	}
 }

@@ -22,5 +22,10 @@ namespace digitalisNyomozas
 		public string Nev { get => nev; set => nev = value; }
 		public string Azonosito { get => azonosito; set => azonosito = value; }
 		public string Szerepkor { get => szerepkor; set => szerepkor = value; }
+
+		public override string ToString()
+		{
+			return $"{this.nev} {this.azonosito}\n {this.szerepkor}";
+		}
 	}
 }

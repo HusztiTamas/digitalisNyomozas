@@ -12,10 +12,10 @@ namespace digitalisNyomozas
 		private string cim;
 		private string leiras;
 		private string allapot;
-		private List<Case> kapcsolodoSzemelyek;
-		private List<Case> kapcsolodoBizonyitekok;
+		private List<User> kapcsolodoSzemelyek;
+		private List<Evidence> kapcsolodoBizonyitekok;
 
-		public Case(string ugy_azonosito, string cim, string leiras, string allapot, List<Case> kapcsolodoSzemelyek, List<Case> kapcsolodoBizonyitekok)
+		public Case(string ugy_azonosito, string cim, string leiras, string allapot)
 		{
 			this.ugy_azonosito = ugy_azonosito;
 			this.cim = cim;
@@ -29,7 +29,22 @@ namespace digitalisNyomozas
 		public string Cim { get => cim; set => cim = value; }
 		public string Leiras { get => leiras; set => leiras = value; }
 		public string Allapot { get => allapot; set => allapot = value; }
-		internal List<Case> KapcsolodoSzemelyek { get => kapcsolodoSzemelyek; set => kapcsolodoSzemelyek = value; }
-		internal List<Case> KapcsolodoBizonyitekok { get => kapcsolodoBizonyitekok; set => kapcsolodoBizonyitekok = value; }
+		internal List<User> KapcsolodoSzemelyek { get => kapcsolodoSzemelyek; set => kapcsolodoSzemelyek = value; }
+		internal List<Evidence> KapcsolodoBizonyitekok { get => kapcsolodoBizonyitekok; set => kapcsolodoBizonyitekok = value; }
+
+		public static Case UjUgy()
+		{
+			Console.WriteLine("Új ügy felvétele");
+			Console.Write("Add meg az ügy azonosítóját: ");
+			string azonosito = Console.ReadLine();
+			Console.Write("Add meg a címet: ");
+			string cim = Console.ReadLine();
+			Console.Write("Add meg az ügy leírását: ");
+			string leiras = Console.ReadLine();
+			Console.Write("Add meg az ügy állapotát: ");
+			string allapot = Console.ReadLine();
+			Console.Write("Add meg a kapcsolódó személyeket: ");
+			return new Case(azonosito, cim, leiras, allapot);
+		}
 	}
 }

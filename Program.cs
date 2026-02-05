@@ -7,30 +7,46 @@ namespace digitalisNyomozas
 	{
 		static void Main(string[] args)
 		{
-			string valasz;
-			bool test = true;
-			Console.WriteLine("Üdvözlöm a rendszerben.");
-			Console.WriteLine("-----------------------");
-			Console.WriteLine("Válasszon az alábbi lehetőségekből(sorszám)");
+			bool use = true;
+			List<Case> ugy=new List<Case>();
 			List<User> felhasznalok = new List<User>();
-			User u1 = new User("nev", "azonosito", "szerepkor");
 			do
 			{
 				{
-					Console.WriteLine("1. Ügyek kezelése\n2. Személyek kezelése\n3. Bizonyíték kezlése\n4. Idővonal megtekintése\n5. Elemzés / döntések\n6. Kilépés");
-					valasz = Console.ReadLine();
+					Console.Clear();
+					Console.WriteLine("Digitális nyomozás rendszer");
+					Console.WriteLine("-----------------------");
+					Console.WriteLine("Válasszon az alábbi lehetőségekből(sorszám)");
+					Console.WriteLine("1. Ügyek kezelése");
+					Console.WriteLine("2. Személyek kezelése");
+					Console.WriteLine("3. Bizonyíték kezelése");
+					Console.WriteLine("4. Idővonal megtekintése");
+					Console.WriteLine("5. Elemzés / döntések");
+					Console.WriteLine("6. Kilépés");
+					string valasz = Console.ReadLine();
 					switch (valasz)
 					{
 						case "1":
-							Console.WriteLine();
+							Case uju = Case.UjUgy();
+							ugy.Add(uju);
+							Console.WriteLine("\nÜgyek:");
+							foreach (var item in ugy)
+							{
+								Console.WriteLine(item);
+							}
+							Console.WriteLine("Nyomj entert a folytatáshoz");
+							Console.ReadKey();
 							break;
 						case "2":
-							User uj = User.Ujugyfel();
-							felhasznalok.Add(uj);
+							User ujf = User.Ujugyfel();
+							felhasznalok.Add(ujf);
+							Console.WriteLine("\nSzemélyek:");
 							foreach (var item in felhasznalok)
 							{
 								Console.WriteLine(item);
 							}
+							Console.WriteLine("Nyomj entert a folytatáshoz");
+							Console.ReadKey();
 							break;
 						case "3":
 							Console.WriteLine();
@@ -43,7 +59,7 @@ namespace digitalisNyomozas
 							break;
 						case "6":
 							Console.WriteLine();
-							test = false;
+							use = false;
 							break;
 						default:
 							Console.WriteLine("Nincs ilyen menüpont");
@@ -51,7 +67,7 @@ namespace digitalisNyomozas
 					}
 				}
 			}
-			while (test);
+			while (use);
 		}
 	}
 }

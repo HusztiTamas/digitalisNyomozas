@@ -11,11 +11,11 @@ namespace digitalisNyomozas
 			Console.WriteLine("Üdvözlöm a rendszerben.");
 			Console.WriteLine("-----------------------");
 			Console.WriteLine("Válasszon az alábbi lehetőségekből(sorszám)");
-			Console.WriteLine("1. Új ügy felvétele\n2. Személy hozzáadása ügyhöz\n3. Bizonyíték rögzítése\n4. Ügy állapotának módosítása\n5. Idővonal esemény hozzáadása\n6. Gyanúsított értékelése bizonyítékok alapján");
-			valasz = char.Parse(Console.ReadLine());
-			while (test)
+			Console.WriteLine("1. Ügyek kezelése\n2. Személyek kezelése\n3. Bizonyíték kezlése\n4. Idővonal megtekintése\n5. Elemzés / döntések\n6. Kilépés");
+			do
 			{
 				{
+					valasz = char.Parse(Console.ReadLine());
 					if (char.IsNumber(valasz))
 					{
 						int ertek = valasz;
@@ -24,25 +24,25 @@ namespace digitalisNyomozas
 							switch (ertek)
 							{
 								case 49:
-									Console.WriteLine("Új ügy felvétele");
+									Console.WriteLine();
 									break;
 								case 50:
-									Console.WriteLine("Személy hozzáadása ügyhöz");
+									Console.WriteLine();
 									break;
 								case 51:
-									Console.WriteLine("Bizonyíték rögzítése");
+									Console.WriteLine();
 									break;
 								case 52:
-									Console.WriteLine("Ügy állapotának módosítása");
+									Console.WriteLine();
 									break;
 								case 53:
-									Console.WriteLine("Idővonal esemény hozzáadása");
+									Console.WriteLine();
 									break;
 								case 54:
-									Console.WriteLine("Gyanúsított értékelése bizonyítékok alapján");
+									Console.WriteLine();
+									test = false;
 									break;
 							}
-							test = false;
 						}
 						else
 						{
@@ -57,6 +57,7 @@ namespace digitalisNyomozas
 					}
 				}
 			}
+			while (test);
 			User u1 = new User("Lajos", "UDLGO732", "Gépész");
 			Console.WriteLine(u1);
 		}

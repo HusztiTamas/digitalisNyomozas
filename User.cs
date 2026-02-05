@@ -25,7 +25,7 @@ namespace digitalisNyomozas
 
 		public override string ToString()
 		{
-			return $"Felhasználó neve: {this.nev} Azonosító: {this.azonosito} Szerepköre: {this.szerepkor}";
+			return $"Felhasználó neve: {this.nev} Azonosító: {this.azonosito} Szerepköre:	{this.szerepkor}";
 		}
 	}
 }

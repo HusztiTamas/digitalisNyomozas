@@ -1,4 +1,5 @@
 ﻿using System.Globalization;
+using System.Runtime.InteropServices;
 
 namespace digitalisNyomozas
 {
@@ -12,6 +13,7 @@ namespace digitalisNyomozas
 			Console.WriteLine("-----------------------");
 			Console.WriteLine("Válasszon az alábbi lehetőségekből(sorszám)");
 			Console.WriteLine("1. Ügyek kezelése\n2. Személyek kezelése\n3. Bizonyíték kezlése\n4. Idővonal megtekintése\n5. Elemzés / döntések\n6. Kilépés");
+			User u1 = new User("Lajos", "UDLGO732", "Gépész");
 			do
 			{
 				{
@@ -27,7 +29,8 @@ namespace digitalisNyomozas
 									Console.WriteLine();
 									break;
 								case 50:
-									Console.WriteLine();
+									u1.Ujugyfel();
+
 									break;
 								case 51:
 									Console.WriteLine();
@@ -47,18 +50,16 @@ namespace digitalisNyomozas
 						else
 						{
 							Console.WriteLine("Helyes értéket adj meg!");
-							valasz = char.Parse(Console.ReadLine());
 						}
 					}
 					else
 					{
 						Console.WriteLine("Ne betűt adj meg!");
-						valasz = char.Parse(Console.ReadLine());
 					}
 				}
 			}
 			while (test);
-			User u1 = new User("Lajos", "UDLGO732", "Gépész");
+			
 			Console.WriteLine(u1);
 		}
 	}
